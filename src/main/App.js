@@ -5,13 +5,18 @@ import Rotas from './rotas'
 import 'bootswatch/dist/flatly/bootstrap.css'
 import '../custom.css'
 
+import NavBar from '../components/navbar'
+
 class App extends React.Component {
 
   render() {
     return (
-      <div> 
-         <Rotas />
-      </div>
+      <>
+        <NavBar />
+        <div className="container"> 
+          <Rotas />
+        </div>
+      </>
     )
   }
 }
