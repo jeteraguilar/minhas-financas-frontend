@@ -12,14 +12,14 @@ export default props => {
                 <td>{lancamento.mes}</td>
                 <td>{lancamento.status}</td>
                 <td>
-                    <button className="btn btn-success"
+                    <button type="button"
                             onClick={ e => props.alterarStatus(lancamento, 'EFETIVADO')}
-                            type="button">
+                            className="btn btn-success">
                             Efetivar
                     </button>
-                    <button className="btn btn-warning"
+                    <button type="button"
                             onClick={ e => props.alterarStatus(lancamento, 'CANCELADO')}
-                            type="button">
+                            className="btn btn-warning">
                             Cancelar
                     </button>
                     <button type="button" 
