@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+
 import Card from '../../components/card'
 import SelectMenu from '../../components/selectMenu'
 import FormGroup from '../../components/form-group'
@@ -11,6 +12,8 @@ import * as messages from '../../components/toastr'
 
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
+
+
 
 class ConsultaLancamentos extends React.Component {
 
@@ -34,6 +37,7 @@ class ConsultaLancamentos extends React.Component {
             messages.mensagemErro('O preenchimento do campo Ano é obrigatório.')
             return false;
         }
+
         const usuarioLogado = LocalStorageService.obterItem('_usuario_logado')
 
         const lancamentoFiltro = {
@@ -78,7 +82,6 @@ class ConsultaLancamentos extends React.Component {
                 const index = lancamentos.indexOf(this.state.lancamentoDeletar)
                 lancamentos.splice(index, 1);
                 this.setState({ lancamentos: lancamentos, showConfirmDialog: false })
-
                 messages.mensagemSucesso('Lançamento deletado com sucesso!')
             }).catch(error => {
                 messages.mensagemErro('Ocorreu um erro ao tentar deletar o Lançamento')
@@ -154,7 +157,7 @@ class ConsultaLancamentos extends React.Component {
                                             className="form-control" 
                                             lista={tipos}/>                             
                             </FormGroup>
-                            <br/ >
+                           
                             <button onClick={this.buscar} 
                                     type="button" 
                                     className="btn btn-success">
@@ -167,6 +170,7 @@ class ConsultaLancamentos extends React.Component {
                             </button>
 
                         </div>
+
                     </div>
                 </div>
                 <br/ >
@@ -179,6 +183,8 @@ class ConsultaLancamentos extends React.Component {
                                               alterarStatus={this.alterarStatus}/>
                         </div> 
                     </div>
+                </div>
+                <div>
                     <Dialog header="Confirmação" 
                             visible={this.state.showConfirmDialog}
                             style={{ width: '50vw' }} 
