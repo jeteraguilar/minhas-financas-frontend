@@ -17,7 +17,7 @@ class UsuarioService extends ApiService{
     }
 
     salvar(usuario) {
-        return this.post('/', usuario)
+        return this.post('', usuario)
     }
 
     validar(usuario) {
@@ -45,4 +45,4 @@ class UsuarioService extends ApiService{
     }
 } 
 
-export default UsuarioService
+export default UsuarioService;
