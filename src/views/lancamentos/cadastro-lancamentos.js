@@ -160,7 +160,7 @@ class CadastroLancamentos extends React.Component {
                         </div>
 
                         <div className= "row">
-                            <div className="col-md-6">
+                            <div className="col-md-6" style={{marginTop:8}}>
                                 { this.state.atualizando ? 
                                     (
                                         <button onClick={this.atualizar} 

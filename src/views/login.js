@@ -37,7 +37,7 @@ class Login extends React.Component {
     render() {
         return (           
             <div className = "row">
-                <div className = "col-md-6" style={ {position: 'relative', left: '300px'} }>  
+                <div className = "col-md-6" style={ {position: 'relative', align: 'center'} }>  
                     <div className="bs-docs-section">
                         <Card title= "Login">                           
                             <div className = "row">
@@ -60,13 +60,15 @@ class Login extends React.Component {
                                                         className="form-control" 
                                                         id="exampleInputPassword1" 
                                                         placeholder="Password" />                                            
-                                            </FormGroup>  
-                                            <button onClick={ this.entrar} className="btn btn-success">
-                                                <i className="pi pi-sign-in "></i> Entrar
-                                            </button>
-                                            <button onClick={ this.prepareCadastrar} className="btn btn-danger">
-                                                <i className="pi pi-plus "></i> Cadastrar
-                                            </button>
+                                            </FormGroup> 
+                                            <div style={{marginTop:8}}>
+                                                <button onClick={ this.entrar} className="btn btn-success" >
+                                                    <i className="pi pi-sign-in "></i> Entrar
+                                                </button>
+                                                <button onClick={ this.prepareCadastrar} className="btn btn-danger">
+                                                    <i className="pi pi-plus "></i> Cadastrar
+                                                </button>
+                                            </div> 
                                         </fieldset>
                                     </div> 
                                 </div>  
