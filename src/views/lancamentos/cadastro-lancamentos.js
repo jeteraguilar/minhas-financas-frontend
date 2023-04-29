@@ -6,7 +6,6 @@ import SelectMenu from '../../components/selectMenu'
 
 import { withRouter } from 'react-router-dom'
 import * as messages from '../../components/toastr'
-import currencyFormatter from 'currency-formatter'
 
 import LancamentoService from '../../app/service/lancamentoService'
 import LocalStorageService from '../../app/service/localStorageService'
