@@ -8,7 +8,11 @@
     "bootswatch": "^4.3.1",
     "classnames": "^2.2.6",
     "currency-formatter": "^1.5.5",
+<<<<<<< HEAD
     "jsonwebtoken": "^8.5.1",
+=======
+    "jsonwebtoken": "^9.0.0",
+>>>>>>> 5eeca8dacca4ae49b96341fdc67702e788f0a76e
     "primeicons": "^2.0.0",
     "primereact": "^3.3.1",
     "react": "^16.10.1",
@@ -25,7 +29,13 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+<<<<<<< HEAD
     "extends": "react-app"
+=======
+    "extends": [
+      "react-app"
+    ]
+>>>>>>> 5eeca8dacca4ae49b96341fdc67702e788f0a76e
   },
   "browserslist": {
     "production": [

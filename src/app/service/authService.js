@@ -3,6 +3,8 @@ import LocalStorageService from './localstorageService'
 import jwt from 'jsonwebtoken'
 import ApiService from '../apiservice'
 
+import jwt from 'jsonwebtoken'
+
 export const USUARIO_LOGADO = '_usuario_logado'
 export const TOKEN = 'access_token'
 
@@ -42,5 +44,4 @@ export default class AuthService {
         AuthService.logar(usuario, token)
         return usuario;
     }
-
 }
