@@ -7,7 +7,7 @@ toastr.options = {
     "progressBar": true,
     "positionClass": "toast-top-right",
     "preventDuplicates": false,
-    "onClick": null,
+    "onclick": null,
     "showDuration": "300",
     "hideDuration": "1000",
     "timeOut": "5000",
@@ -18,18 +18,18 @@ toastr.options = {
     "hideMethod": "fadeOut"
   }
 
-  export function mostrarMensagem(titulo, mensagem, tipo) {
+export function mostrarMensagem(titulo, mensagem, tipo){
     toastr[tipo](mensagem, titulo)
-  }
+}
 
-  export function mensagemErro(mensagem) {
-      mostrarMensagem('Erro', mensagem, 'error')
-  }
+export function mensagemErro(mensagem){
+    mostrarMensagem('Erro', mensagem, 'error')
+}
 
-  export function mensagemSucesso(mensagem) {
-      mostrarMensagem('Sucesso', mensagem, 'success')
-  }
+export function mensagemSucesso(mensagem){
+    mostrarMensagem('Sucesso', mensagem, 'success')
+}
 
-  export function mensagemAlert(mensagem) {
-      mostrarMensagem('Alerta', mensagem, 'warning')
-  }
+export function mensagemAlert(mensagem){
+    mostrarMensagem('Alerta', mensagem, 'warning')
+}

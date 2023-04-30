@@ -10,8 +10,8 @@ import 'bootswatch/dist/flatly/bootstrap.css'
 import '../custom.css'
 import 'toastr/build/toastr.css'
 
-import 'primereact/resources/themes/lara-light-indigo/theme.css';  
-import 'primereact/resources/primereact.min.css';                  
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 class App extends React.Component {
@@ -20,8 +20,8 @@ class App extends React.Component {
     return(
       <ProvedorAutenticacao>
         <Navbar />
-        <div className="container">  
-           <Rotas />
+        <div className="container">    
+            <Rotas />
         </div>
       </ProvedorAutenticacao>
     )

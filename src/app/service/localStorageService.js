@@ -1,5 +1,5 @@
 export default class LocalStorageService {
-
+    
     static adicionarItem(chave, valor){
         localStorage.setItem(chave, JSON.stringify(valor));
     }
@@ -9,7 +9,7 @@ export default class LocalStorageService {
         return JSON.parse(item)
     }
 
-    static removerItem(chave) {
+    static removerItem(chave){
         localStorage.removeItem(chave)
     }
 }

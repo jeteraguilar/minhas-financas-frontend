@@ -1,4 +1,4 @@
-function ErroValidacao(mensagens) {
+function ErroValidacao(mensagens){
     this.mensagens = mensagens;
 }
 
