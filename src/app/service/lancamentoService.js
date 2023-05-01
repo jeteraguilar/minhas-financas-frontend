@@ -1,4 +1,4 @@
-import ApiService from '../apiservice'
+import ApiService from '../apiService'
 
 import ErroValidacao from '../exception/ErroValidacao'
 

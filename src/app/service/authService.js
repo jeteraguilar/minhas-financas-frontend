@@ -1,9 +1,7 @@
-import LocalStorageService from './localstorageService'
+import LocalStorageService from './localStorageService'
 
 import jwt from 'jsonwebtoken'
-import ApiService from '../apiservice'
-
-import jwt from 'jsonwebtoken'
+import ApiService from '../apiService'
 
 export const USUARIO_LOGADO = '_usuario_logado'
 export const TOKEN = 'access_token'

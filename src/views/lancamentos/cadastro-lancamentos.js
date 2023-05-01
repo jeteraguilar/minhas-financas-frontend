@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
 import * as messages from '../../components/toastr'
 
 import LancamentoService from '../../app/service/lancamentoService'
-import LocalStorageService from '../../app/service/localstorageService'
+import LocalStorageService from '../../app/service/localStorageService'
 
 class CadastroLancamentos extends React.Component {
 

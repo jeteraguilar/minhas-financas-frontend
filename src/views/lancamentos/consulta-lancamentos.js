@@ -6,7 +6,7 @@ import FormGroup from '../../components/form-group'
 import SelectMenu from '../../components/selectMenu'
 import LancamentosTable from './lancamentosTable'
 import LancamentoService from '../../app/service/lancamentoService'
-import LocalStorageService from '../../app/service/localstorageService'
+import LocalStorageService from '../../app/service/localStorageService'
 
 import * as messages from '../../components/toastr'
 
