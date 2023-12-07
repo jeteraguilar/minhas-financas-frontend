@@ -3,10 +3,9 @@ import axios from 'axios'
 const baseURL = process.env.REACT_APP_API_URL
 
 const httpClient = axios.create({
-        baseURL: 'https://financas-api.herokuapp.com/'
-             /* 'http://localhost:8080', */
-        
-})
+        baseURL: 'https://financas-api-63b66c2c7915.herokuapp.com/',
+             //'http://localhost:8080'
+        })
 
 class ApiService {
 
