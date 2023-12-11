@@ -26,6 +26,44 @@ export default class LancamentoService extends ApiService {
         ]
     }
 
+    obterListaDiaVencRec(){
+        return  [
+            { label: 'Selecione...', value: '' },
+            { label: 'Dia 1', value: 1 },
+            { label: 'Dia 2', value: 2 },
+            { label: 'Dia 3', value: 3 },
+            { label: 'Dia 4', value: 4 },
+            { label: 'Dia 5', value: 5 },
+            { label: 'Dia 6', value: 6 },
+            { label: 'Dia 7', value: 7 },
+            { label: 'Dia 8', value: 8 },
+            { label: 'Dia 9', value: 9 },
+            { label: 'Dia 10', value: 10 },
+            { label: 'Dia 11', value: 11 },
+            { label: 'Dia 12', value: 12 },
+            { label: 'Dia 13', value: 13 },
+            { label: 'Dia 14', value: 14 },
+            { label: 'Dia 15', value: 15 },
+            { label: 'Dia 16', value: 16 },
+            { label: 'Dia 17', value: 17 },
+            { label: 'Dia 18', value: 18 },
+            { label: 'Dia 19', value: 19 },
+            { label: 'Dia 20', value: 20 },
+            { label: 'Dia 21', value: 21 },
+            { label: 'Dia 22', value: 22 },
+            { label: 'Dia 23', value: 23 },
+            { label: 'Dia 24', value: 24 },
+            { label: 'Dia 25', value: 25 },
+            { label: 'Dia 26', value: 26 },
+            { label: 'Dia 27', value: 27 },
+            { label: 'Dia 28', value: 28 },
+            { label: 'Dia 29', value: 29 },
+            { label: 'Dia 30', value: 30 },
+            { label: 'Dia 31', value: 31 },
+          
+        ]
+    }
+
     obterListaTipos(){
         return  [
             { label: 'Selecione...', value: '' },
@@ -52,6 +90,10 @@ export default class LancamentoService extends ApiService {
 
         if(!lancamento.mes){
             erros.push("Informe o Mês.")
+        }
+
+        if(!lancamento.vencRec){
+            erros.push("Informe o Dia do vencimento/recebimento.")
         }
 
         if(!lancamento.descricao){
@@ -84,6 +126,10 @@ export default class LancamentoService extends ApiService {
 
         if(lancamentoFiltro.mes){
             params = `${params}&mes=${lancamentoFiltro.mes}`
+        }
+
+        if(lancamentoFiltro.vencRec){
+            params = `${params}&vencRec=${lancamentoFiltro.vencRec}`
         }
 
         if(lancamentoFiltro.tipo){

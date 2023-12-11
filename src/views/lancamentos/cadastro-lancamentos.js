@@ -17,6 +17,7 @@ class CadastroLancamentos extends React.Component {
         descricao: '',
         valor: '',
         mes: '',
+        vencRec: '',
         ano: '',
         tipo: '',
         status: '',
@@ -47,8 +48,8 @@ class CadastroLancamentos extends React.Component {
     submit = () => {
         const usuarioLogado = LocalStorageService.obterItem('_usuario_logado')
 
-        const { descricao, valor, mes, ano, tipo } = this.state;
-        const lancamento = { descricao, valor, mes, ano, tipo, usuario: usuarioLogado.id };
+        const { descricao, valor, mes, vencRec, ano, tipo } = this.state;
+        const lancamento = { descricao, valor, mes, vencRec, ano, tipo, usuario: usuarioLogado.id };
 
         try{
             this.service.validar(lancamento)
@@ -69,9 +70,9 @@ class CadastroLancamentos extends React.Component {
     }
 
     atualizar = () => {
-        const { descricao, valor, mes, ano, tipo, status, usuario, id } = this.state;
+        const { descricao, valor, mes, vencRec, ano, tipo, status, usuario, id } = this.state;
 
-        const lancamento = { descricao, valor, mes, ano, tipo, usuario, status, id };
+        const lancamento = { descricao, valor, mes, vencRec, ano, tipo, usuario, status, id };
         
         this.service
             .atualizar(lancamento)
@@ -93,6 +94,7 @@ class CadastroLancamentos extends React.Component {
     render(){
         const tipos = this.service.obterListaTipos();
         const meses = this.service.obterListaMeses();
+        const vencRecs = this.service.obterListaDiaVencRec();
 
         return (
             <Card title={ this.state.atualizando ? 'Atualização de Lançamento'  : 'Cadastro de Lançamento' }>
@@ -108,7 +110,7 @@ class CadastroLancamentos extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-4">
                         <FormGroup id="inputAno" label="Ano: *">
                             <input id="inputAno" 
                                    type="text"
@@ -118,7 +120,7 @@ class CadastroLancamentos extends React.Component {
                                    className="form-control" />
                         </FormGroup>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-4">
                         <FormGroup id="inputMes" label="Mês: *">
                             <SelectMenu id="inputMes" 
                                         value={this.state.mes}
@@ -128,14 +130,24 @@ class CadastroLancamentos extends React.Component {
                                         className="form-control" />
                         </FormGroup>
                     </div>
+                    <div className="col-md-4">
+                        <FormGroup id="inputVencRec" label="Dia Vencimento/Recebimento: *">
+                            <SelectMenu id="inputVencRec" 
+                                        value={this.state.vencRec}
+                                        onChange={this.handleChange}
+                                        lista={vencRecs} 
+                                        name="vencRec"
+                                        className="form-control" />
+                        </FormGroup>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col-md-4">
                          <FormGroup id="inputValor" label="Valor: *">
-                            <input id="inputValor" 
-                                   type="text"
+                            <input id="inputValor"  
+                                   type="text"                                   
                                    name="valor"
-                                   value={this.state.valor}
+                                   value={ this.state.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }
                                    onChange={this.handleChange} 
                                    className="form-control" />
                         </FormGroup>
@@ -161,7 +173,6 @@ class CadastroLancamentos extends React.Component {
                                    disabled />
                         </FormGroup>
                     </div>
-
                    
                 </div>
                 <div className="row">

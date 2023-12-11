@@ -10,6 +10,7 @@ export default props => {
                 <td>{ currencyFormatter.format(lancamento.valor, { locale: 'pt-BR'}) }</td>
                 <td>{lancamento.tipo}</td>
                 <td>{lancamento.mes}</td>
+                <td>{lancamento.vencRec}</td>
                 <td>{lancamento.status}</td>
                 <td>
                     <button className="btn btn-success" title="Efetivar"
@@ -47,6 +48,7 @@ export default props => {
                     <th scope="col">Valor</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Mês</th>
+                    <th scope="col">Dia Venc/Rec</th>
                     <th scope="col">Situação</th>
                     <th scope="col">Ações</th>
                 </tr>

@@ -20,6 +20,7 @@ class ConsultaLancamentos extends React.Component {
     state = {
         ano: '',
         mes: '',
+        vencRec: '',
         tipo: '',
         descricao: '',
         showConfirmDialog: false,
@@ -43,6 +44,7 @@ class ConsultaLancamentos extends React.Component {
         const lancamentoFiltro = {
             ano: this.state.ano,
             mes: this.state.mes,
+            vencRec: this.state.vencRec,
             tipo: this.state.tipo,
             descricao: this.state.descricao,
             usuario: usuarioLogado.id
@@ -110,6 +112,7 @@ class ConsultaLancamentos extends React.Component {
     render(){
         const meses = this.service.obterListaMeses();
         const tipos = this.service.obterListaTipos();
+        const vencRecs = this.service.obterListaDiaVencRec();
 
         const confirmDialogFooter = (
             <div>
@@ -139,6 +142,14 @@ class ConsultaLancamentos extends React.Component {
                                             onChange={e => this.setState({ mes: e.target.value })}
                                             className="form-control" 
                                             lista={meses} />
+                            </FormGroup>
+
+                            <FormGroup htmlFor="inputVencRec" label="Dia Vencimento/Recebimento: ">
+                                <SelectMenu id="inputVencRec" 
+                                            value={this.state.vencRec}
+                                            onChange={e => this.setState({ vencRec: e.target.value })}
+                                            className="form-control" 
+                                            lista={vencRecs} />
                             </FormGroup>
 
                             <FormGroup htmlFor="inputDesc" label="Descrição: ">
